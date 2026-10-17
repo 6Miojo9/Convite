@@ -33,16 +33,20 @@ window.addEventListener("scroll", () => {
     content.style.width = "100%";
   }
 });
-const video = document.getElementById('meuVideo');
+
+const videoEsquerdo = document.getElementById('meuVideoEsquerdo');
+const videoDireito = document.getElementById('meuVideoDireito');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      video.play();
+      videoEsquerdo.play();
+      videoDireito.play();
     }
   });
 },{
   threshold: 0.5
 });
 
-observer.observe(video);
+observer.observe(videoEsquerdo);
+observer.observe(videoDireito);
